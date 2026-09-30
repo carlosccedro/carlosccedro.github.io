@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// Identidade visual Carlos Cedro
+// Este é o ÚNICO arquivo que você precisa editar para mudar cores e
+// fontes. Site (modo claro e escuro) e slides leem estas variáveis.
+// =====================================================================
+
+// Paleta principal
+$cc-azul-noite:   #1A1F4E;  // primária: confiança e seriedade acadêmica
+$cc-ciano:        #22D3EE;  // destaque tecnológico (modo escuro, ícones)
+$cc-verde-agua:   #0E7C86;  // destaque para texto e links no modo claro
+$cc-coral:        #FF6B5A;  // apoio humano: só em ícones, selos e realces
+
+// Neutros do modo claro
+$cc-claro-fundo:      #F7F8FC;
+$cc-claro-superficie: #FFFFFF;
+$cc-claro-borda:      #DDE1EE;
+$cc-claro-texto:      #1C2033;
+$cc-claro-apoio:      #5B6178;
+
+// Neutros do modo escuro
+$cc-escuro-fundo:      #0D1024;
+$cc-escuro-superficie: #161A33;
+$cc-escuro-borda:      #2A2F55;
+$cc-escuro-texto:      #E8EAF6;
+$cc-escuro-apoio:      #A3A8C3;
+
+// Tipografia (arquivos locais em _identidade/fontes, sem servidores externos)
+$cc-fonte-titulos: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+$cc-fonte-texto:   "Inter", "Segoe UI", system-ui, sans-serif;
+$cc-fonte-codigo:  "JetBrains Mono", "Cascadia Code", ui-monospace, monospace;

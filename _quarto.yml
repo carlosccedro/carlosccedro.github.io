@@ -1,0 +1,63 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "_identidade/*.svg"
+    - "_identidade/fontes/*"
+    - "_identidade/katex/**"
+
+lang: pt-BR
+
+# Notebooks e códigos só são executados na sua máquina.
+# O GitHub Actions apenas publica o resultado salvo em _freeze/.
+execute:
+  freeze: auto
+
+website:
+  title: "Carlos Cedro"
+  description: "Materiais didáticos de computação, inteligência artificial e dados do professor Carlos Costa Cedro."
+  site-url: "https://carlosccedro.github.io"
+  favicon: _identidade/favicon.svg
+  search: true
+  open-graph: true
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    logo: _identidade/simbolo-negativo.svg
+    logo-alt: "Símbolo Carlos Cedro, um cedro formado por nós conectados"
+    title: "Carlos Cedro"
+    right:
+      - text: "Disciplinas"
+        href: index.qmd#disciplinas
+      - text: "Guia de marca"
+        href: marca.qmd
+      - icon: github
+        href: https://github.com/carlosccedro/carlosccedro.github.io
+        aria-label: "Repositório no GitHub"
+  page-footer:
+    left: |
+      © 2026 Carlos Costa Cedro. Conteúdo sob licença
+      [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br) e código sob licença MIT.
+    right: "Onde a teoria cria raízes na prática"
+
+format:
+  html:
+    # tokens.scss fica por último de propósito: o Quarto lê as variáveis
+    # dos temas de trás para frente, e as cores precisam existir primeiro.
+    theme:
+      light: [_identidade/fontes.scss, _identidade/site.scss, _identidade/claro.scss, _identidade/tokens.scss]
+      dark:  [_identidade/fontes.scss, _identidade/site.scss, _identidade/escuro.scss, _identidade/tokens.scss]
+    respect-user-color-scheme: true
+    toc: true
+    toc-title: "Nesta página"
+    toc-depth: 2
+    code-copy: true
+    anchor-sections: true
+    link-external-newwindow: true
+    # Fórmulas com KaTeX hospedado no próprio site (sem CDN de terceiros)
+    html-math-method:
+      method: katex
+      url: "/_identidade/katex/"
+    # Política de segurança de conteúdo por meta tag (o GitHub Pages não
+    # permite cabeçalhos próprios). Ver _identidade/seguranca.html.
+    include-in-header: _identidade/seguranca.html

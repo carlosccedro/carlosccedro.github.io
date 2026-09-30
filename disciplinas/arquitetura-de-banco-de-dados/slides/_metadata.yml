@@ -1,0 +1,21 @@
+# Configuração compartilhada por todos os slides desta disciplina.
+# Cada arquivo de slides só precisa de título, unidade, duração e conteúdo.
+author: "Prof. Carlos Costa Cedro"
+format:
+  revealjs:
+    theme: [default, ../../../_identidade/fontes.scss, ../../../_identidade/slides.scss, ../../../_identidade/tokens.scss]
+    logo: ../../../_identidade/simbolo.svg
+    footer: "Carlos Cedro | Arquitetura de Banco de Dados"
+    slide-number: true
+    transition: fade
+    code-copy: true
+    preview-links: auto
+    html-math-method:
+      method: katex
+      url: "/_identidade/katex/"
+    include-in-header: ../../../_identidade/seguranca.html
+title-slide-attributes:
+  data-background-color: "#1A1F4E"
+  data-background-image: ../../../_identidade/cedro-slide.svg
+  data-background-size: "auto 70%"
+  data-background-position: "94% 55%"

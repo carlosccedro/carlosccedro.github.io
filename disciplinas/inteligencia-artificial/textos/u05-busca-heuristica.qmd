@@ -1,0 +1,84 @@
+---
+title: "Busca heurística e o algoritmo A*"
+description: "Como uma boa estimativa do custo restante transforma a busca, e as duas propriedades que garantem que o A* encontre a melhor solução."
+author: "Carlos Costa Cedro"
+unidade: 5
+duracao: "35 min de leitura"
+---
+
+## Da busca cega à busca informada
+
+As estratégias da unidade anterior tratam todos os nós da fronteira da mesma forma: não sabem se estão perto ou longe do objetivo. A busca **informada** acrescenta uma peça de conhecimento sobre o problema, a **função heurística** $h(n)$, que estima o custo do caminho mais barato do nó $n$ até um objetivo.
+
+A heurística não precisa ser exata. Ela precisa ser **barata de calcular** e **boa o bastante** para afastar a busca dos caminhos inúteis.
+
+## A função de avaliação do A*
+
+O A* ordena a fronteira pela soma de duas quantidades:
+
+$$
+f(n) = g(n) + h(n)
+$$
+
+em que $g(n)$ é o custo já pago do estado inicial até $n$ e $h(n)$ é a estimativa do que falta. Assim, $f(n)$ estima o custo total da melhor solução que passa por $n$.
+
+Compare com a **busca gulosa**, que usa apenas $f(n) = h(n)$. Ela costuma chegar rápido a *alguma* solução, mas ignora o custo acumulado e por isso pode devolver caminhos ruins.
+
+## Quando o A* garante a solução ótima
+
+::: {.callout-tip}
+## Admissibilidade
+
+Uma heurística é **admissível** quando nunca superestima o custo real até o objetivo:
+
+$$
+h(n) \le h^*(n) \quad \text{para todo } n
+$$
+
+Com uma heurística admissível, o A* em busca em árvore encontra sempre uma solução de custo mínimo.
+:::
+
+::: {.callout-tip}
+## Consistência
+
+Uma heurística é **consistente** quando, para todo nó $n$ e todo sucessor $n'$ gerado pela ação $a$:
+
+$$
+h(n) \le c(n, a, n') + h(n')
+$$
+
+É uma forma de desigualdade triangular. Toda heurística consistente é admissível, e a consistência garante a otimalidade do A* também na busca em grafo, em que estados repetidos são descartados.
+:::
+
+## Exemplo: o quebra-cabeça de 8 peças
+
+Considere o estado abaixo, com o objetivo de colocar o espaço vazio no canto superior esquerdo e as peças de 1 a 8 em ordem.
+
+| Estado inicial | | | | Objetivo | | |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 7 | 2 | 4 | | | 1 | 2 |
+| 5 | | 6 | | 3 | 4 | 5 |
+| 8 | 3 | 1 | | 6 | 7 | 8 |
+
+Duas heurísticas admissíveis clássicas:
+
+- $h_1$, **peças fora do lugar**: todas as 8 peças estão fora da posição, então $h_1 = 8$.
+- $h_2$, **distância de Manhattan**: soma, para cada peça, das linhas e colunas que ela precisa percorrer. Aqui, $h_2 = 18$.
+
+Ambas são admissíveis, porque cada peça fora do lugar precisa de pelo menos um movimento, e nenhuma peça chega ao destino em menos movimentos do que sua distância de Manhattan.
+
+## Dominância
+
+Se $h_2(n) \ge h_1(n)$ para todo $n$ e as duas são admissíveis, dizemos que $h_2$ **domina** $h_1$. Nesse caso, o A* com $h_2$ nunca expande mais nós do que com $h_1$, a menos de empates. A regra prática é direta: entre heurísticas admissíveis, prefira a de **valores maiores**, desde que o custo de calculá-la não anule o ganho.
+
+## Para praticar
+
+1. Mostre que a distância de Manhattan é consistente no quebra-cabeça de 8 peças.
+2. Construa um grafo pequeno em que a busca gulosa devolve uma solução pior que a do A*.
+3. O que acontece com a otimalidade se usarmos $h(n) = 3 \cdot h_2(n)$? E com o número de nós expandidos?
+
+## Referências
+
+RUSSELL, Stuart; NORVIG, Peter. *Inteligência Artificial: uma abordagem moderna*. Capítulo sobre busca informada.
+
+RICH, Elaine; KNIGHT, Kevin. *Inteligência Artificial*. Capítulo sobre técnicas de busca heurística.

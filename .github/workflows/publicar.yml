@@ -1,0 +1,61 @@
+# Publica o portal no GitHub Pages a cada push na branch main.
+# Pré-requisito (uma única vez): Settings > Pages > Source: GitHub Actions.
+#
+# Segurança:
+# - cada ação é fixada pelo hash do commit (a tag fica no comentário);
+#   o Dependabot (.github/dependabot.yml) propõe as atualizações;
+# - cada job recebe só as permissões de que precisa;
+# - a versão do Quarto é fixa.
+name: Publicar portal
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Bloquear material restrito
+        run: sh .githooks/verificar-restritos.sh
+
+      - name: Instalar o Quarto
+        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2.2.0
+        with:
+          version: 1.10.18
+
+      - name: Gerar o site
+        uses: quarto-dev/quarto-actions/render@8a96df13519ee81fd526f2dfca5962811136661b # v2.2.0
+
+      - name: Empacotar o site
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: publicacao
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

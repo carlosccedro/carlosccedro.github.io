@@ -1,0 +1,17 @@
+---
+title: "Título da aula"
+subtitle: "Subtítulo opcional"
+description: "Uma frase sobre o que a turma vai aprender nesta aula."
+unidade: 1
+duracao: "40 min"
+---
+
+## Primeiro slide
+
+- Cada `##` cria um novo slide
+- Use **negrito** para destacar termos
+- Fórmulas funcionam: $f(n) = g(n) + h(n)$
+
+## Slide de atividade {.cc-escuro background-color="#1A1F4E"}
+
+Instruções da atividade em fundo escuro.

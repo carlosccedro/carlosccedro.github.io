@@ -1,0 +1,29 @@
+---
+title: "IA generativa e modelos de fundação: o que muda para quem estuda IA clássica"
+description: "Palestra sobre como os grandes modelos de linguagem se relacionam com busca, planejamento e agentes, os temas centrais da disciplina."
+author: "Carlos Costa Cedro"
+duracao: "50 min"
+---
+
+<!-- Para publicar o vídeo, troque o bloco abaixo pelo shortcode de vídeo descrito no README (seção Palestras). -->
+
+::: {.cc-video-vazio}
+[<i class="bi bi-camera-video" aria-hidden="true"></i>]{}
+[O vídeo desta palestra será publicado em breve.]{}
+:::
+
+## Resumo
+
+Modelos de fundação mudaram a forma como construímos sistemas inteligentes, mas não aposentaram a IA clássica. Nesta palestra, discutimos onde busca, heurísticas e agentes aparecem por dentro das aplicações modernas: no planejamento de agentes baseados em modelos de linguagem, na decodificação de texto e na avaliação de alternativas.
+
+## Tópicos
+
+1. O que é um modelo de fundação
+2. Agentes: do modelo PEAS aos agentes com ferramentas
+3. Busca e planejamento dentro de aplicações com modelos de linguagem
+4. Limites, riscos e responsabilidade no uso de IA generativa
+
+## Material complementar
+
+- Slides da unidade 4: [Busca cega](../slides/u04-busca-cega.qmd)
+- Texto de apoio: [Busca heurística e o algoritmo A*](../textos/u05-busca-heuristica.qmd)

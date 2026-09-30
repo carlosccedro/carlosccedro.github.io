@@ -1,0 +1,17 @@
+---
+title: "Título da palestra"
+description: "Uma frase sobre a palestra."
+author: "Carlos Costa Cedro"
+duracao: "50 min"
+---
+
+<!-- Troque o bloco abaixo pelo shortcode de vídeo descrito no README (seção Palestras). -->
+
+::: {.cc-video-vazio}
+[<i class="bi bi-camera-video" aria-hidden="true"></i>]{}
+[O vídeo desta palestra será publicado em breve.]{}
+:::
+
+## Resumo
+
+Resumo da palestra.

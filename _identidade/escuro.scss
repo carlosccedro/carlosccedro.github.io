@@ -1,0 +1,15 @@
+/*-- scss:defaults --*/
+// Modo escuro: mesmos papéis, valores invertidos.
+$cc-fundo:      $cc-escuro-fundo;
+$cc-superficie: $cc-escuro-superficie;
+$cc-borda:      $cc-escuro-borda;
+$cc-texto:      $cc-escuro-texto;
+$cc-apoio:      $cc-escuro-apoio;
+$cc-titulo:     $cc-escuro-texto;
+$cc-destaque:   $cc-ciano;
+$cc-traco:      $cc-ciano;
+$cc-ponto:      rgba(34, 211, 238, 0.10);
+
+$primary:        $cc-ciano;
+$code-block-bg:  #12162D;
+$code-color:     $cc-ciano;

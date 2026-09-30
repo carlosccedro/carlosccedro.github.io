@@ -1,0 +1,38 @@
+---
+pagetitle: "Carlos Cedro | Computação, IA e dados"
+description: "Slides, textos, laboratórios, podcasts e palestras das disciplinas do professor Carlos Costa Cedro."
+toc: false
+page-layout: full
+listing:
+  id: lista-disciplinas
+  contents: "disciplinas/*/index.qmd"
+  template: _identidade/disciplinas.ejs
+  sort: "ordem"
+---
+
+```{=html}
+<section class="cc-hero" aria-labelledby="cc-hero-titulo">
+  <div class="cc-hero-texto">
+    <span class="cc-hero-autor">Prof. Carlos Costa Cedro</span>
+    <h1 id="cc-hero-titulo" class="cc-hero-titulo">Onde a teoria cria raízes na prática</h1>
+    <p class="cc-hero-intro">Slides, textos, laboratórios, podcasts e palestras das minhas disciplinas de computação, inteligência artificial e dados, organizados aula a aula.</p>
+    <a class="cc-botao" href="#disciplinas">Ver disciplinas</a>
+  </div>
+  <div class="cc-hero-arte" aria-hidden="true"><svg class="cc-cedro" viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg" focusable="false"><line class="aresta raiz" pathLength="1" x1="160" y1="320" x2="120" y2="350" style="animation-delay:0s"/><line class="aresta raiz" pathLength="1" x1="160" y1="320" x2="200" y2="350" style="animation-delay:0s"/><line class="aresta raiz" pathLength="1" x1="160" y1="320" x2="160" y2="356" style="animation-delay:.05s"/><line class="aresta" pathLength="1" x1="160" y1="320" x2="160" y2="180" style="animation-delay:.3s"/><line class="aresta" pathLength="1" x1="40" y1="250" x2="70" y2="180" style="animation-delay:0.7s"/><line class="aresta" pathLength="1" x1="120" y1="250" x2="70" y2="180" style="animation-delay:0.75s"/><line class="aresta" pathLength="1" x1="120" y1="250" x2="160" y2="180" style="animation-delay:0.8s"/><line class="aresta" pathLength="1" x1="200" y1="250" x2="160" y2="180" style="animation-delay:0.8s"/><line class="aresta" pathLength="1" x1="200" y1="250" x2="250" y2="180" style="animation-delay:0.75s"/><line class="aresta" pathLength="1" x1="280" y1="250" x2="250" y2="180" style="animation-delay:0.7s"/><line class="aresta" pathLength="1" x1="70" y1="180" x2="115" y2="110" style="animation-delay:1.15s"/><line class="aresta" pathLength="1" x1="160" y1="180" x2="115" y2="110" style="animation-delay:1.2s"/><line class="aresta" pathLength="1" x1="160" y1="180" x2="205" y2="110" style="animation-delay:1.2s"/><line class="aresta" pathLength="1" x1="250" y1="180" x2="205" y2="110" style="animation-delay:1.15s"/><line class="aresta" pathLength="1" x1="115" y1="110" x2="160" y2="40" style="animation-delay:1.6s"/><line class="aresta" pathLength="1" x1="205" y1="110" x2="160" y2="40" style="animation-delay:1.6s"/><circle class="no no-raiz" cx="120" cy="350" r="4.5" style="animation-delay:.35s"/><circle class="no no-raiz" cx="200" cy="350" r="4.5" style="animation-delay:.35s"/><circle class="no no-raiz" cx="160" cy="356" r="4.5" style="animation-delay:.4s"/><circle class="no" cx="40" cy="250" r="7.5" style="animation-delay:.6s"/><circle class="no" cx="120" cy="250" r="7.5" style="animation-delay:.6s"/><circle class="no" cx="200" cy="250" r="7.5" style="animation-delay:.6s"/><circle class="no" cx="280" cy="250" r="7.5" style="animation-delay:.6s"/><circle class="no" cx="70" cy="180" r="8.5" style="animation-delay:1.05s"/><circle class="no" cx="160" cy="180" r="8.5" style="animation-delay:1.05s"/><circle class="no" cx="250" cy="180" r="8.5" style="animation-delay:1.05s"/><circle class="no" cx="115" cy="110" r="9.5" style="animation-delay:1.5s"/><circle class="no" cx="205" cy="110" r="9.5" style="animation-delay:1.5s"/><circle class="no no-topo" cx="160" cy="40" r="12" style="animation-delay:1.95s"/></svg></div>
+</section>
+```
+
+## Disciplinas {#disciplinas}
+
+::: {#lista-disciplinas}
+:::
+
+## O que você encontra em cada disciplina
+
+- **Slides** para acompanhar a aula no navegador, com versão para salvar em PDF.
+- **Textos** de apoio com a teoria completa, exemplos e exercícios.
+- **Laboratórios** em notebooks que abrem direto no Google Colab, sem instalar nada.
+- **Podcasts** para revisar o conteúdo no caminho, sempre com transcrição.
+- **Palestras** gravadas, com resumo e material complementar.
+
+Os materiais seguem a ordem das unidades. Na página de cada disciplina, o número em cada nó da trilha indica a unidade em que o material é usado.

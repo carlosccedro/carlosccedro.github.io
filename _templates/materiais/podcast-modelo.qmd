@@ -1,0 +1,22 @@
+---
+title: "Episódio 1: Título"
+description: "Uma frase sobre o episódio."
+author: "Carlos Costa Cedro"
+unidade: 1
+duracao: "15 min"
+---
+
+<audio class="cc-audio" controls preload="none" src="https://github.com/{{< var github.repositorio >}}/releases/download/podcasts/NOME-DO-ARQUIVO.mp3"></audio>
+
+## Neste episódio
+
+- Tópico 1
+- Tópico 2
+
+## Transcrição
+
+::: {.callout-note collapse="true"}
+## Ler a transcrição completa
+
+Cole aqui a transcrição do episódio.
+:::

@@ -1,0 +1,47 @@
+/*-- scss:defaults --*/
+// Tema dos slides (Reveal.js). Usa as mesmas variáveis de tokens.scss.
+$body-bg:                          $cc-claro-fundo;
+$body-color:                       $cc-claro-texto;
+$link-color:                       $cc-verde-agua;
+$font-family-sans-serif:           $cc-fonte-texto;
+$font-family-monospace:            $cc-fonte-codigo;
+$presentation-heading-font:        $cc-fonte-titulos;
+$presentation-heading-color:       $cc-azul-noite;
+$presentation-heading-font-weight: 600;
+$presentation-font-size-root:      36px;
+$code-block-bg:                    #EEF0F8;
+
+/*-- scss:rules --*/
+
+.reveal h1, .reveal h2, .reveal h3 { letter-spacing: -0.025em; }
+.reveal .slide-logo { max-height: 2.4rem !important; }
+.reveal .footer { color: $cc-claro-apoio; font-size: 0.5em; }
+.reveal .slide-number { color: $cc-claro-apoio; }
+.reveal strong { color: $cc-azul-noite; }
+.reveal .destaque { color: $cc-verde-agua; }
+.reveal table { font-size: 0.8em; }
+.reveal table th { color: $cc-azul-noite; border-bottom: 2px solid $cc-azul-noite; }
+
+// Slide de título: texto à esquerda, cedro à direita
+#title-slide { text-align: left; }
+#title-slide .title, #title-slide .subtitle, #title-slide .quarto-title-authors { max-width: 58%; }
+#title-slide .quarto-title-authors { justify-content: flex-start; }
+#title-slide .quarto-title-author { padding-left: 0; }
+
+// Slides de fundo escuro: esconde o símbolo escuro e clareia rodapé e numeração
+.reveal.has-dark-background .slide-logo { opacity: 0; }
+.reveal.has-dark-background .footer, .reveal.has-dark-background .slide-number { color: #A3A8C3; }
+#title-slide .title, .reveal .cc-escuro h2 { color: #F7F8FC; }
+#title-slide .subtitle { color: $cc-ciano; font-family: $cc-fonte-titulos; }
+#title-slide .quarto-title-author-name, #title-slide .date { color: #C9CDE6; }
+.reveal .cc-escuro, .reveal .cc-escuro p, .reveal .cc-escuro li { color: #E8EAF6; }
+.reveal .cc-escuro strong { color: $cc-ciano; }
+
+// Slide de título alinhado à esquerda, deixando o cedro livre à direita
+.reveal #title-slide { text-align: left; }
+.reveal #title-slide .title,
+.reveal #title-slide .subtitle,
+.reveal #title-slide .quarto-title-authors { max-width: 60%; margin-left: 0; }
+.reveal #title-slide .title { font-size: 2.3em; line-height: 1.05; }
+.reveal #title-slide .quarto-title-authors { justify-content: flex-start; }
+.reveal #title-slide .quarto-title-author { padding-left: 0; }

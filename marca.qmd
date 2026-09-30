@@ -1,0 +1,56 @@
+---
+title: "Guia de marca"
+subtitle: "Como usar a identidade visual Carlos Cedro"
+description: "Logotipo, paleta de cores, tipografia e regras de uso da identidade visual do portal."
+---
+
+## Conceito
+
+O símbolo é um cedro desenhado como um grafo de nós conectados. A mesma forma lê como árvore, como árvore de decisão e como rede neural em camadas, amarrando o sobrenome às disciplinas de computação e IA. O nó coral no topo representa o estudante, o ponto para onde o aprendizado cresce. A assinatura resume a proposta: **onde a teoria cria raízes na prática**.
+
+## Logotipo
+
+::: {.cc-vitrine}
+::: {.fundo-claro}
+![](_identidade/logo.svg){fig-alt="Logotipo Carlos Cedro para fundos claros"}
+:::
+::: {.fundo-escuro}
+![](_identidade/logo-negativo.svg){fig-alt="Logotipo Carlos Cedro para fundos escuros"}
+:::
+:::
+
+Use a versão positiva sobre fundos claros e a negativa sobre o azul-noite ou fundos escuros. Mantenha ao redor do logotipo uma área livre de pelo menos a altura do nó central do símbolo. Em tamanhos abaixo de 24 pixels, use apenas o símbolo.
+
+Arquivos: [logo.svg](_identidade/logo.svg), [logo-negativo.svg](_identidade/logo-negativo.svg), [simbolo.svg](_identidade/simbolo.svg), [simbolo-negativo.svg](_identidade/simbolo-negativo.svg) e [favicon.svg](_identidade/favicon.svg).
+
+## Paleta
+
+```{=html}
+<div class="cc-paleta">
+  <div class="cc-amostra"><div class="cor" style="background:#1A1F4E"></div><div class="info"><strong>Azul-noite</strong><code>#1A1F4E</code><br>Cor primária: títulos, barra de navegação, fundos de destaque.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#0E7C86"></div><div class="info"><strong>Verde-água</strong><code>#0E7C86</code><br>Links e textos de destaque no modo claro.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#22D3EE"></div><div class="info"><strong>Ciano elétrico</strong><code>#22D3EE</code><br>Destaque no modo escuro e sobre o azul-noite.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#FF6B5A"></div><div class="info"><strong>Coral</strong><code>#FF6B5A</code><br>Só em ícones, selos e no nó do topo. Nunca em texto sobre fundo claro.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#F7F8FC;border-bottom:1px solid #DDE1EE"></div><div class="info"><strong>Fundo claro</strong><code>#F7F8FC</code><br>Fundo das páginas no modo claro.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#1C2033"></div><div class="info"><strong>Texto</strong><code>#1C2033</code><br>Texto corrido no modo claro.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#0D1024"></div><div class="info"><strong>Fundo escuro</strong><code>#0D1024</code><br>Fundo das páginas no modo escuro.</div></div>
+  <div class="cc-amostra"><div class="cor" style="background:#E8EAF6"></div><div class="info"><strong>Texto claro</strong><code>#E8EAF6</code><br>Texto corrido no modo escuro.</div></div>
+</div>
+```
+
+Todas as combinações de texto usadas no portal atendem ao contraste mínimo WCAG AA. O verde-água sobre branco tem contraste de cerca de 4,9:1 e o ciano sobre o fundo escuro, de cerca de 10:1. As cores ficam centralizadas em `_identidade/tokens.scss`.
+
+## Tipografia
+
+```{=html}
+<div class="cc-tipo-amostra"><p class="exemplo" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.9rem;letter-spacing:-0.03em;line-height:1.15">Redes neurais na prática</p><span class="rotulo">Space Grotesk, para títulos, logotipo e números de unidade</span></div>
+<div class="cc-tipo-amostra"><p class="exemplo" style="font-family:'Inter',sans-serif;font-size:1.05rem">Neste laboratório você treina seu primeiro classificador e compara os resultados com a turma.</p><span class="rotulo">Inter, para textos corridos e interface</span></div>
+<div class="cc-tipo-amostra"><p class="exemplo" style="font-family:'JetBrains Mono',monospace;font-size:1rem">modelo.fit(X_treino, y_treino)</p><span class="rotulo">JetBrains Mono, para código</span></div>
+```
+
+## Regras de uso
+
+- Não altere as cores, as proporções nem a posição do nó coral do símbolo.
+- Não aplique sombras, contornos ou gradientes ao logotipo.
+- Use o coral com moderação: ele marca um único ponto de atenção por tela.
+- Nos slides, mantenha o slide de título em azul-noite e o restante em fundo claro.

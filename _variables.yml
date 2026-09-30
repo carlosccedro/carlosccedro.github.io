@@ -1,0 +1,6 @@
+# Dados do repositório, usados nos botões "Abrir no Colab".
+# Se o seu usuário do GitHub for outro, altere aqui e na linha
+# "href" do ícone do GitHub em _quarto.yml.
+github:
+  usuario: "carlosccedro"
+  repositorio: "carlosccedro/carlosccedro.github.io"

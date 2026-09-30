@@ -1,0 +1,15 @@
+---
+title: "Título do texto de apoio"
+description: "Uma frase sobre o conteúdo do texto."
+author: "Carlos Costa Cedro"
+unidade: 1
+duracao: "20 min de leitura"
+---
+
+## Introdução
+
+Escreva o texto em Markdown. Use `##` para seções, `$...$` para fórmulas e blocos `::: {.callout-tip}` para destaques.
+
+## Referências
+
+SOBRENOME, Nome. *Título da obra*.

@@ -1,0 +1,89 @@
+---
+title: "Busca cega"
+subtitle: "Largura, profundidade e custo uniforme"
+description: "Como explorar um espaço de estados sem nenhuma pista sobre onde está o objetivo, e o preço de cada estratégia em tempo e memória."
+unidade: 4
+duracao: "40 min"
+---
+
+## Onde paramos
+
+Na aula passada, transformamos problemas em **espaços de estados**:
+
+- um estado inicial
+- as ações possíveis em cada estado
+- um teste de objetivo
+- o custo de cada passo
+
+Hoje a pergunta é outra: **em que ordem** exploramos esse espaço?
+
+## Um algoritmo, uma linha de diferença
+
+```{.python code-line-numbers="5"}
+def busca(problema, fronteira):
+    fronteira.adicionar(No(problema.inicial))
+    visitados = set()
+    while fronteira:
+        no = fronteira.remover()   # a ordem de remoção decide tudo
+        if problema.objetivo(no.estado):
+            return no
+        visitados.add(no.estado)
+        for filho in no.expandir(problema):
+            if filho.estado not in visitados:
+                fronteira.adicionar(filho)
+    return None
+```
+
+Fila (FIFO) gera **busca em largura**. Pilha (LIFO) gera **busca em profundidade**.
+
+## Busca em largura
+
+- Expande primeiro os nós mais **rasos**
+- **Completa** se o fator de ramificação $b$ for finito
+- **Ótima** quando todos os passos custam o mesmo
+- Guarda toda a fronteira: tempo e memória $O(b^d)$
+
+::: {.fragment}
+O problema raramente é o tempo. É a **memória**.
+:::
+
+## Busca em profundidade
+
+- Mergulha no ramo mais **profundo** antes de voltar
+- Memória $O(b \cdot m)$: só o caminho atual e os irmãos de cada nó
+- **Não é completa** em espaços infinitos ou com ciclos não tratados
+- **Não é ótima**: pode achar uma solução longa antes da curta
+
+## Busca de custo uniforme
+
+- Fronteira ordenada pelo custo acumulado $g(n)$
+- Expande sempre o nó **mais barato** até agora
+- **Ótima** quando todo passo custa pelo menos $\varepsilon > 0$
+- É o algoritmo de Dijkstra visto como busca
+
+## Comparando as estratégias
+
+| Critério | Largura | Profundidade | Custo uniforme |
+|:---|:---:|:---:|:---:|
+| Completa? | Sim | Não | Sim |
+| Ótima? | Sim, com custos iguais | Não | Sim |
+| Tempo | $O(b^d)$ | $O(b^m)$ | $O(b^{1+\lfloor C^*/\varepsilon \rfloor})$ |
+| Memória | $O(b^d)$ | $O(b \cdot m)$ | $O(b^{1+\lfloor C^*/\varepsilon \rfloor})$ |
+
+$b$: ramificação, $d$: profundidade da solução mais rasa, $m$: profundidade máxima, $C^*$: custo ótimo.
+
+## Mão na massa {.cc-escuro background-color="#1A1F4E"}
+
+Em duplas, executem **à mão** a busca em largura e a busca em profundidade no grafo do quadro.
+
+1. Anotem a fronteira a cada passo
+2. Contem quantos nós cada estratégia examinou
+3. Troquem o objetivo e repitam. O que aconteceu?
+
+**10 minutos**
+
+## Para a próxima aula
+
+- Laboratório no Colab: *Largura contra profundidade*
+- Leitura: *Busca heurística e o algoritmo A\**
+- Pergunta para pensar: e se tivéssemos uma **pista** sobre onde está o objetivo?

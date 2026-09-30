@@ -1,0 +1,38 @@
+---
+title: "Episódio 1: A explosão combinatória"
+description: "Por que computadores rápidos não bastam para resolver problemas de busca, e o que o xadrez tem a ver com o número de átomos do universo."
+author: "Carlos Costa Cedro"
+unidade: 3
+duracao: "18 min"
+---
+
+<!-- Hospede o MP3 nos Releases do GitHub (veja o README) e ajuste o endereço abaixo. -->
+<audio class="cc-audio" controls preload="none" src="https://github.com/{{< var github.repositorio >}}/releases/download/podcasts/ia-ep01-explosao-combinatoria.mp3">
+  Seu navegador não reproduz áudio. [Baixe o episódio](https://github.com/{{< var github.repositorio >}}/releases/download/podcasts/ia-ep01-explosao-combinatoria.mp3).
+</audio>
+
+## Neste episódio
+
+- O que é o fator de ramificação e por que ele cresce tão rápido
+- A estimativa de Shannon para o número de partidas de xadrez, na ordem de $10^{120}$
+- Por que a solução não é um computador mais rápido, e sim uma busca mais esperta
+- Uma prévia das heurísticas, tema das próximas unidades
+
+## Para ir além
+
+- Material de apoio da unidade 3: formulação de problemas e espaço de estados
+- Texto de apoio da unidade 5: [Busca heurística e o algoritmo A*](../textos/u05-busca-heuristica.qmd)
+
+## Transcrição
+
+::: {.callout-note collapse="true"}
+## Ler a transcrição completa
+
+Olá, pessoal. Neste episódio quero falar de um número que assusta: dez elevado a cento e vinte. É a ordem de grandeza que Claude Shannon estimou para a quantidade de partidas possíveis de xadrez.
+
+Para entender de onde ele vem, pense no fator de ramificação. Em uma posição típica de xadrez, um jogador tem algumas dezenas de lances possíveis. Cada lance leva a outra posição, com outras dezenas de respostas. Depois de poucas jogadas, a árvore já tem mais ramos do que qualquer computador consegue percorrer.
+
+É isso que chamamos de explosão combinatória. E a lição mais importante dela é que força bruta não resolve. O que resolve é conhecimento sobre o problema, usado para decidir quais ramos merecem atenção. Esse conhecimento, na forma de uma estimativa, é o que vamos chamar de heurística.
+
+*Substitua este texto pela transcrição do seu episódio.*
+:::

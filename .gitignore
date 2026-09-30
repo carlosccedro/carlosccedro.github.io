@@ -1,0 +1,22 @@
+/.quarto/
+/_site/
+**/*.quarto_ipynb
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+
+# Material restrito nunca vai para o repositório (veja o README, seção Segurança).
+# Arquivos com estes nomes não são enviados; o gancho de pre-commit e o
+# workflow também bloqueiam o envio e a publicação.
+restrito/
+*gabarito*
+*Gabarito*
+*GABARITO*
+[Pp]rova[0-9_-]*
+*_[Pp]rova[0-9_-]*
+*-[Pp]rova[0-9_-]*
+*lista-de-alunos*
+*lista_de_alunos*
+*notas-finais*
+*frequencia*
+

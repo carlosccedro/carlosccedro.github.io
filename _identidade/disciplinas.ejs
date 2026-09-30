@@ -1,0 +1,12 @@
+```{=html}
+<div class="cc-disciplinas">
+<% for (const item of items) { %>
+  <a class="cc-disciplina" href="<%- item.path %>" <%= metadataAttrs(item) %>>
+    <% if (item.nivel) { %><span class="cc-disciplina-nivel"><%= item.nivel %></span><% } %>
+    <span class="cc-disciplina-titulo"><%= item.title %></span>
+    <% if (item.description) { %><span class="cc-disciplina-desc"><%= item.description %></span><% } %>
+    <% if (item.status) { %><span class="cc-disciplina-status em-preparo"><%= item.status %></span><% } else { %><span class="cc-disciplina-status">Acessar materiais</span><% } %>
+  </a>
+<% } %>
+</div>
+```

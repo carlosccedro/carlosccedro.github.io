@@ -1,0 +1,180 @@
+/*-- scss:defaults --*/
+// Aplica a identidade ao Bootstrap do Quarto. Cores e fontes vêm de
+// tokens.scss (via claro.scss ou escuro.scss). Evite editar valores aqui.
+
+$body-bg:               $cc-fundo;
+$body-color:            $cc-texto;
+$link-color:            $cc-destaque;
+$headings-color:        $cc-titulo;
+$border-color:          $cc-borda;
+$border-radius:         0.5rem;
+
+$font-family-sans-serif: $cc-fonte-texto;
+$font-family-monospace:  $cc-fonte-codigo;
+$headings-font-family:   $cc-fonte-titulos;
+$headings-font-weight:   600;
+
+$navbar-bg: $cc-azul-noite;
+$navbar-fg: #E8EAF6;
+$navbar-hl: $cc-ciano;
+$footer-bg: $cc-fundo;
+$footer-fg: $cc-apoio;
+
+/*-- scss:rules --*/
+
+:root {
+  --cc-fundo: #{$cc-fundo};
+  --cc-superficie: #{$cc-superficie};
+  --cc-borda: #{$cc-borda};
+  --cc-texto: #{$cc-texto};
+  --cc-apoio: #{$cc-apoio};
+  --cc-titulo: #{$cc-titulo};
+  --cc-destaque: #{$cc-destaque};
+  --cc-traco: #{$cc-traco};
+  --cc-coral: #{$cc-coral};
+  --cc-ponto: #{$cc-ponto};
+  --cc-fonte-titulos: #{$cc-fonte-titulos};
+}
+
+// ---------- Tipografia ----------
+h1, h2, h3, h4, .title { letter-spacing: -0.02em; }
+h1.title { letter-spacing: -0.03em; }
+a { text-underline-offset: 0.18em; }
+:focus-visible { outline: 2px solid var(--cc-destaque); outline-offset: 3px; border-radius: 4px; }
+.navbar-brand .navbar-title { font-family: $cc-fonte-titulos; font-weight: 600; letter-spacing: -0.01em; }
+.navbar-logo { max-height: 32px; }
+.quarto-title .subtitle { color: var(--cc-apoio); font-family: $cc-fonte-titulos; font-weight: 500; }
+
+// ---------- Hero da página inicial ----------
+.cc-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2.5rem 0 3rem;
+}
+.cc-hero-autor { display: block; font-family: $cc-fonte-titulos; font-weight: 500; color: var(--cc-apoio); margin-bottom: 0.9rem; }
+.cc-hero-titulo {
+  font-family: $cc-fonte-titulos;
+  font-weight: 600;
+  font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--cc-titulo);
+  margin: 0 0 1.25rem;
+  max-width: 13ch;
+}
+.cc-hero-intro { font-size: 1.15rem; line-height: 1.6; color: var(--cc-apoio); max-width: 34rem; margin-bottom: 1.75rem; }
+.cc-botao {
+  display: inline-block; padding: 0.7rem 1.3rem; border-radius: 999px;
+  background: var(--cc-titulo); color: var(--cc-fundo); font-weight: 600;
+  text-decoration: none; transition: background-color 0.15s ease;
+}
+.cc-botao:hover { background: var(--cc-destaque); color: var(--cc-fundo); }
+.cc-hero-arte { position: relative; }
+.cc-hero-arte::before {
+  content: ""; position: absolute; inset: -8% -4%;
+  background-image: radial-gradient(var(--cc-ponto) 1.5px, transparent 1.7px);
+  background-size: 20px 20px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent);
+  mask-image: radial-gradient(closest-side, #000 55%, transparent);
+}
+.cc-cedro { position: relative; display: block; width: 100%; max-width: 330px; height: auto; margin: 0 auto; }
+
+// Animação única: o cedro cresce das raízes até o topo
+.cc-cedro .aresta { fill: none; stroke: var(--cc-traco); stroke-width: 3.5; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1; animation: cc-desenha 0.45s ease-out forwards; }
+.cc-cedro .raiz { stroke: var(--cc-destaque); }
+.cc-cedro .no { fill: var(--cc-traco); transform-box: fill-box; transform-origin: center;
+  transform: scale(0); animation: cc-surge 0.35s cubic-bezier(.3, 1.5, .6, 1) forwards; }
+.cc-cedro .no-raiz { fill: var(--cc-destaque); }
+.cc-cedro .no-topo { fill: var(--cc-coral); }
+@keyframes cc-desenha { to { stroke-dashoffset: 0; } }
+@keyframes cc-surge { to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .cc-cedro .aresta, .cc-cedro .no { animation: none; stroke-dashoffset: 0; transform: none; }
+}
+@media (max-width: 767.98px) {
+  .cc-hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 1rem; }
+  .cc-hero-arte { order: -1; max-width: 190px; }
+}
+
+// ---------- Cartões de disciplina ----------
+.cc-disciplinas { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 1rem; margin: 1.25rem 0 2.5rem; }
+.cc-disciplina {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+  background: var(--cc-superficie); border: 1px solid var(--cc-borda); border-radius: 14px;
+  color: var(--cc-texto); text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.cc-disciplina:hover { border-color: var(--cc-destaque); transform: translateY(-2px); color: var(--cc-texto); }
+.cc-disciplina-nivel { font-size: 0.82rem; color: var(--cc-apoio); }
+.cc-disciplina-titulo { font-family: $cc-fonte-titulos; font-weight: 600; font-size: 1.22rem; line-height: 1.25; color: var(--cc-titulo); }
+.cc-disciplina-desc { font-size: 0.93rem; line-height: 1.5; color: var(--cc-apoio); }
+.cc-disciplina-status { margin-top: auto; padding-top: 0.6rem; font-size: 0.82rem; font-weight: 600; color: var(--cc-destaque); }
+.cc-disciplina-status.em-preparo { color: var(--cc-apoio); font-weight: 500; }
+
+// ---------- Ficha e atalhos da disciplina ----------
+.cc-ficha ul { display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; margin: 0 0 1.25rem; padding: 0; list-style: none; font-size: 0.92rem; }
+.cc-ficha li { color: var(--cc-apoio); margin: 0; }
+.cc-ficha strong { color: var(--cc-texto); font-weight: 600; margin-right: 0.3rem; }
+.cc-atalhos p { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1rem; }
+.cc-atalhos a {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.35rem 0.85rem; border: 1px solid var(--cc-borda); border-radius: 999px;
+  background: var(--cc-superficie); color: var(--cc-texto); font-size: 0.9rem; text-decoration: none;
+}
+.cc-atalhos a:hover { border-color: var(--cc-destaque); color: var(--cc-destaque); }
+.cc-atalhos .bi, .cc-secao-icone { color: var(--cc-destaque); }
+.cc-secao-icone { margin-right: 0.5rem; font-size: 0.85em; }
+
+// ---------- Trilha de materiais (nós conectados) ----------
+.cc-trilha { list-style: none; padding: 0; margin: 0.75rem 0 0.5rem; }
+.cc-trilha-item:not(:last-child)::before {
+  content: ""; position: absolute; left: 17px; top: 2.75rem; bottom: -0.75rem; width: 2px; background: var(--cc-borda);
+}
+.cc-trilha-item { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 1rem; padding: 0.5rem 0 0.9rem; }
+.cc-no {
+  position: relative; z-index: 1;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cc-fundo); border: 2px solid var(--cc-traco);
+  font-family: $cc-fonte-titulos; font-weight: 600; font-size: 0.92rem; color: var(--cc-titulo);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.cc-trilha-item:hover .cc-no { background: var(--cc-traco); color: var(--cc-fundo); }
+.cc-trilha-titulo { font-family: $cc-fonte-titulos; font-weight: 600; font-size: 1.1rem; line-height: 1.3; color: var(--cc-titulo); text-decoration: none; }
+.cc-trilha-titulo:hover { color: var(--cc-destaque); text-decoration: underline; }
+.cc-trilha-desc { margin: 0.2rem 0 0.45rem; color: var(--cc-apoio); font-size: 0.95rem; line-height: 1.5; }
+.cc-trilha-meta { display: flex; flex-wrap: wrap; gap: 0.35rem 1.2rem; font-size: 0.86rem; color: var(--cc-apoio); }
+.cc-trilha-meta a { color: var(--cc-destaque); text-decoration: none; }
+.cc-trilha-meta a:hover { text-decoration: underline; }
+.cc-trilha-meta .bi { margin-right: 0.3rem; }
+.cc-vazio { color: var(--cc-apoio); padding: 0.8rem 1rem; border: 1px dashed var(--cc-borda); border-radius: 10px; margin: 0.75rem 0 0.5rem; }
+.quarto-listing-container-custom { margin-bottom: 0; padding-bottom: 0; }
+
+// ---------- Mídia ----------
+.cc-audio { width: 100%; margin: 0.5rem 0 1.5rem; }
+.cc-video-vazio {
+  aspect-ratio: 16 / 9; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; justify-content: center;
+  border: 1px dashed var(--cc-borda); border-radius: 14px; background: var(--cc-superficie); color: var(--cc-apoio);
+  text-align: center; padding: 1rem; margin-bottom: 1.5rem;
+}
+.cc-video-vazio .bi { font-size: 2rem; color: var(--cc-destaque); }
+
+// ---------- Guia de marca ----------
+.cc-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+.cc-vitrine > div { border-radius: 14px; padding: 2rem 1.5rem; display: flex; align-items: center; justify-content: center; border: 1px solid var(--cc-borda); }
+.cc-vitrine img { max-width: 100%; height: 56px; }
+.cc-vitrine .fundo-claro { background: #F7F8FC; }
+.cc-vitrine .fundo-escuro { background: #1A1F4E; }
+.cc-paleta { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+.cc-amostra { border: 1px solid var(--cc-borda); border-radius: 12px; overflow: hidden; background: var(--cc-superficie); }
+.cc-amostra .cor { height: 76px; }
+.cc-amostra .info { padding: 0.7rem 0.9rem 0.8rem; font-size: 0.88rem; color: var(--cc-apoio); line-height: 1.45; }
+.cc-amostra .info strong { display: block; color: var(--cc-texto); font-size: 0.95rem; }
+.cc-amostra code { background: none; padding: 0; color: var(--cc-texto); }
+.cc-tipo-amostra { border: 1px solid var(--cc-borda); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; background: var(--cc-superficie); }
+.cc-tipo-amostra .exemplo { color: var(--cc-titulo); margin: 0 0 0.25rem; }
+.cc-tipo-amostra .rotulo { font-size: 0.85rem; color: var(--cc-apoio); }

@@ -1,0 +1,76 @@
+---
+title: "Arquitetura de Banco de Dados"
+subtitle: "Modelagem, projeto e segurança de dados"
+description: "Modelagem, projeto e arquitetura de bancos de dados, com atenção à integridade e à segurança da informação."
+nivel: "Graduação presencial, Cibersegurança"
+# Enquanto a disciplina estiver em montagem, mantenha a linha abaixo.
+# Apague-a quando os primeiros materiais forem publicados.
+status: "Em preparação"
+ordem: 3
+listing:
+  - id: lista-slides
+    contents: "slides/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: slides }
+    sort: "unidade"
+  - id: lista-textos
+    contents: "textos/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: textos }
+    sort: "unidade"
+  - id: lista-labs
+    contents: "labs/*.ipynb"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: labs }
+    sort: "unidade"
+  - id: lista-podcasts
+    contents: "podcasts/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: podcasts }
+    sort: "unidade"
+  - id: lista-palestras
+    contents: "palestras/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: palestras }
+    sort: "unidade"
+---
+
+::: {.cc-ficha}
+- **Professor** Carlos Costa Cedro
+:::
+
+::: {.cc-atalhos}
+[<i class="bi bi-easel" aria-hidden="true"></i> Slides](#slides)
+[<i class="bi bi-journal-text" aria-hidden="true"></i> Textos](#textos)
+[<i class="bi bi-terminal" aria-hidden="true"></i> Laboratórios](#laboratorios)
+[<i class="bi bi-mic" aria-hidden="true"></i> Podcasts](#podcasts)
+[<i class="bi bi-camera-video" aria-hidden="true"></i> Palestras](#palestras)
+:::
+
+Os materiais desta disciplina estão em preparação e serão publicados aqui ao longo do semestre.
+
+## <i class="bi bi-easel cc-secao-icone" aria-hidden="true"></i>Slides {#slides}
+
+::: {#lista-slides}
+:::
+
+## <i class="bi bi-journal-text cc-secao-icone" aria-hidden="true"></i>Textos {#textos}
+
+::: {#lista-textos}
+:::
+
+## <i class="bi bi-terminal cc-secao-icone" aria-hidden="true"></i>Laboratórios {#laboratorios}
+
+::: {#lista-labs}
+:::
+
+## <i class="bi bi-mic cc-secao-icone" aria-hidden="true"></i>Podcasts {#podcasts}
+
+::: {#lista-podcasts}
+:::
+
+## <i class="bi bi-camera-video cc-secao-icone" aria-hidden="true"></i>Palestras {#palestras}
+
+::: {#lista-palestras}
+:::
+

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Ativado com: git config core.hooksPath .githooks
+exec sh .githooks/verificar-restritos.sh --staged

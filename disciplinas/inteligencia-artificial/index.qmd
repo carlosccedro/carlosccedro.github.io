@@ -1,0 +1,106 @@
+---
+title: "Inteligência Artificial"
+subtitle: "Agentes, busca, jogos e otimização"
+description: "Técnicas clássicas de IA: agentes inteligentes, busca cega e heurística, teoria de jogos e busca local, com ética em IA como fio condutor."
+nivel: "Graduação presencial, Ciência da Computação"
+ordem: 1
+listing:
+  - id: lista-slides
+    contents: "slides/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: slides }
+    sort: "unidade"
+  - id: lista-textos
+    contents: "textos/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: textos }
+    sort: "unidade"
+  - id: lista-labs
+    contents: "labs/*.ipynb"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: labs }
+    sort: "unidade"
+  - id: lista-podcasts
+    contents: "podcasts/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: podcasts }
+    sort: "unidade"
+  - id: lista-palestras
+    contents: "palestras/*.qmd"
+    template: ../../_identidade/trilha.ejs
+    template-params: { tipo: palestras }
+    sort: "unidade"
+---
+
+::: {.cc-ficha}
+- **Professor** Carlos Costa Cedro
+- **Carga horária** 80 horas-aula
+- **Período** 6º
+:::
+
+::: {.cc-atalhos}
+[<i class="bi bi-easel" aria-hidden="true"></i> Slides](#slides)
+[<i class="bi bi-journal-text" aria-hidden="true"></i> Textos](#textos)
+[<i class="bi bi-terminal" aria-hidden="true"></i> Laboratórios](#laboratorios)
+[<i class="bi bi-mic" aria-hidden="true"></i> Podcasts](#podcasts)
+[<i class="bi bi-camera-video" aria-hidden="true"></i> Palestras](#palestras)
+:::
+
+## Ementa
+
+A disciplina apresenta as técnicas clássicas da Inteligência Artificial: agentes inteligentes e seus ambientes, formulação de problemas como espaço de estados, busca cega e heurística, teoria de jogos com Minimax e poda alfa-beta, e busca local e otimização com Hill Climbing, Simulated Annealing e algoritmos genéticos. Ética em IA e as tendências trazidas pelos modelos de fundação (IA generativa) atravessam todo o semestre.
+
+## Objetivos
+
+Ao final da disciplina, você será capaz de desenvolver modelos computacionais eficazes e éticos, o que se desdobra em três resultados de aprendizagem:
+
+- **RA1.** Formular problemas e resolvê-los com estratégias de busca cega e heurística, analisando completude, otimalidade e custo.
+- **RA2.** Modelar jogos de dois jogadores e aplicar Minimax e poda alfa-beta em decisões competitivas.
+- **RA3.** Aplicar busca local e algoritmos de otimização a problemas em que o caminho importa menos que a solução.
+
+## Cronograma
+
+| Aula | Tema | RA |
+|:---:|:---|:---:|
+| 1 | Fundamentos da IA, Teste de Turing e ética | RA1 |
+| 2 | Agentes inteligentes e ambientes (PEAS) | RA1 |
+| 3 | Formulação de problemas e espaço de estados | RA1 |
+| 4 | Busca cega: largura, profundidade e custo uniforme | RA1 |
+| 5 | Busca heurística e algoritmo A* | RA1 |
+| 6 | Teoria de jogos e Minimax | RA2 |
+| 7 | Poda alfa-beta e decisões em tempo real | RA2 |
+| 8 | Busca local: Hill Climbing e Simulated Annealing | RA3 |
+| 9 | Algoritmos genéticos | RA3 |
+
+**Avaliações:** TDE1 (Ética em IA), TDE2 (Busca competitiva), TDE3 (Otimização), Prova 1 em 23/09, Prova 2 em 28/10 e recuperação em 11/11.
+
+## <i class="bi bi-easel cc-secao-icone" aria-hidden="true"></i>Slides {#slides}
+
+::: {#lista-slides}
+:::
+
+## <i class="bi bi-journal-text cc-secao-icone" aria-hidden="true"></i>Textos {#textos}
+
+::: {#lista-textos}
+:::
+
+## <i class="bi bi-terminal cc-secao-icone" aria-hidden="true"></i>Laboratórios {#laboratorios}
+
+::: {#lista-labs}
+:::
+
+## <i class="bi bi-mic cc-secao-icone" aria-hidden="true"></i>Podcasts {#podcasts}
+
+::: {#lista-podcasts}
+:::
+
+## <i class="bi bi-camera-video cc-secao-icone" aria-hidden="true"></i>Palestras {#palestras}
+
+::: {#lista-palestras}
+:::
+
+## Bibliografia básica
+
+- RUSSELL, Stuart; NORVIG, Peter. *Inteligência Artificial: uma abordagem moderna*.
+- FACELI, Katti *et al.* *Inteligência Artificial: uma abordagem de aprendizado de máquina*.
+- RICH, Elaine; KNIGHT, Kevin. *Inteligência Artificial*.
