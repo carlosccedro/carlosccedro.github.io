@@ -1,12 +1,12 @@
 ---
-title: "Aprendizagem de Máquina"
-subtitle: "Do dado ao modelo avaliado"
-description: "Fundamentos e algoritmos de aprendizado supervisionado e não supervisionado, da preparação dos dados à avaliação de modelos."
-nivel: "Graduação presencial, Ciência da Computação"
+title: "Agentes de IA no desenvolvimento de software"
+subtitle: "Do chat ao time de agentes"
+description: "Como construir agentes de IA especializados, com Tools e Skills, para desenvolver software melhor"
+nivel: "Graduação presencial"
 # Enquanto a disciplina estiver em montagem, mantenha a linha abaixo.
 # Apague-a quando os primeiros materiais forem publicados.
 status: "Em preparação"
-ordem: 5
+ordem: 2
 listing:
   - id: lista-slides
     contents: "slides/*.qmd"
@@ -37,6 +37,8 @@ listing:
 
 ::: {.cc-ficha}
 - **Professor** Carlos Costa Cedro
+- **Carga horária** 00 horas-aula
+- **Período** 0º
 :::
 
 ::: {.cc-atalhos}
@@ -47,7 +49,21 @@ listing:
 [<i class="bi bi-camera-video" aria-hidden="true"></i> Palestras](#palestras)
 :::
 
-Os materiais desta disciplina estão em preparação e serão publicados aqui ao longo do semestre.
+## Ementa
+
+Escreva aqui a ementa da disciplina.
+
+## Objetivos
+
+- **RA1.** Primeiro resultado de aprendizagem.
+- **RA2.** Segundo resultado de aprendizagem.
+
+## Cronograma
+
+| Aula | Tema | RA |
+|:---:|:---|:---:|
+| 1 | Tema da aula 1 | RA1 |
+| 2 | Tema da aula 2 | RA1 |
 
 ## <i class="bi bi-easel cc-secao-icone" aria-hidden="true"></i>Slides {#slides}
 
@@ -74,3 +90,6 @@ Os materiais desta disciplina estão em preparação e serão publicados aqui ao
 ::: {#lista-palestras}
 :::
 
+## Bibliografia básica
+
+- SOBRENOME, Nome. *Título da obra*.

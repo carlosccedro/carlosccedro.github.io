@@ -6,7 +6,7 @@ nivel: "Pós-graduação EAD, Inteligência Artificial"
 # Enquanto a disciplina estiver em montagem, mantenha a linha abaixo.
 # Apague-a quando os primeiros materiais forem publicados.
 status: "Em preparação"
-ordem: 4
+ordem: 6
 listing:
   - id: lista-slides
     contents: "slides/*.qmd"

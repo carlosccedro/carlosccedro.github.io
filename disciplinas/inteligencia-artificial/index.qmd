@@ -3,7 +3,7 @@ title: "Inteligência Artificial"
 subtitle: "Agentes, busca, jogos e otimização"
 description: "Técnicas clássicas de IA: agentes inteligentes, busca cega e heurística, teoria de jogos e busca local, com ética em IA como fio condutor."
 nivel: "Graduação presencial, Ciência da Computação"
-ordem: 1
+ordem: 4
 listing:
   - id: lista-slides
     contents: "slides/*.qmd"

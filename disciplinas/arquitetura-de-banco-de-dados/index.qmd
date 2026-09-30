@@ -6,7 +6,7 @@ nivel: "Graduação presencial, Cibersegurança"
 # Enquanto a disciplina estiver em montagem, mantenha a linha abaixo.
 # Apague-a quando os primeiros materiais forem publicados.
 status: "Em preparação"
-ordem: 3
+ordem: 7
 listing:
   - id: lista-slides
     contents: "slides/*.qmd"
