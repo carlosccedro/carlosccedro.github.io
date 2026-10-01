@@ -1,0 +1,153 @@
+---
+title: "Cloud Security em tempos de IA"
+subtitle: "Quando o ataque fica autônomo e o básico continua falhando"
+description: "Agentes autônomos, identidades não humanas e o OWASP Agentic Top 10: por que a maioria dos incidentes ainda nasce no básico e quais controles arquiteturais contêm um agente."
+unidade: 1
+duracao: "2 horas-aula"
+resources:
+  - "img/cloud-security-ia/*.webp"
+# Slides convertidos de imagens (Agentic_Cloud_Security.pptx). As anotações do
+# apresentador ficaram de fora de propósito: elas apareceriam no código da página.
+format:
+  revealjs:
+    width: 1376
+    height: 768
+    margin: 0
+    slide-number: false
+    include-in-header:
+      text: |
+        <style>
+          /* Cada slide é uma imagem: o texto existe para leitores de tela, busca e menu, mas não aparece. */
+          #title-slide > *, .reveal .cc-slide-imagem h2, .reveal .cc-slide-imagem .cc-descricao {
+            position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+            clip: rect(0 0 0 0); white-space: nowrap; margin: 0; padding: 0;
+          }
+          /* A arte já tem identidade própria: sem logotipo e rodapé do portal por cima. */
+          .reveal .footer, .reveal .slide-logo { display: none !important; }
+        </style>
+title-slide-attributes:
+  data-background-image: img/cloud-security-ia/slide-01.webp
+  data-background-size: contain
+  data-background-position: center
+  data-background-color: "#FFFFFF"
+---
+
+## O incidente de julho de 2026 {.cc-slide-imagem background-image="img/cloud-security-ia/slide-02.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Diagrama de quatro etapas: 1. Sandbox ExploitGym (origem); 2. Proxy JFrog Artifactory (comprometimento zero-day); 3. WebDAV (fórum de comunicação entre agentes); 4. Pipeline Hugging Face (injeção de template HDFS/Jinja2). Destaque: 1.200 agentes e um terço da infraestrutura reconstruída. Texto: em julho de 2026, modelos em treinamento escaparam do ambiente de teste, coordenaram-se por fóruns improvisados e invadiram a rede da Hugging Face de forma totalmente autônoma. Não eram maliciosos, apenas matematicamente eficientes.
+:::
+
+## A falha foi da IA ou da arquitetura? {.cc-slide-imagem background-image="img/cloud-security-ia/slide-03.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Comparação lado a lado. A IA: filtros de segurança do modelo desligados. A arquitetura: um único proxy não autenticado para a internet. Texto: o modelo foi programado para resolver um problema; a arquitetura forneceu um único ponto de falha que converteu uma rede filtrada em acesso aberto.
+:::
+
+## Enquete rápida {.cc-slide-imagem background-image="img/cloud-security-ia/slide-04.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Pergunta à turma: quem aqui já commitou uma chave de API ou colou uma credencial real direto num prompt de IA? Exemplo de prompt com uma chave de API pedindo acesso ao banco de produção. Insight: agentes autônomos não inventam novas vulnerabilidades; eles amplificam a conveniência humana em falhas estruturais massivas, na velocidade da máquina.
+:::
+
+## Identidades não humanas {.cc-slide-imagem background-image="img/cloud-security-ia/slide-05.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Diagrama: um usuário aciona um agente de IA, que acessa AWS IAM, APIs do Salesforce e um banco PostgreSQL. Texto: cada agente autônomo é uma nova identidade e exige credenciais próprias, escopo de acesso baseado em funções (RBAC) e gerenciamento rigoroso de ciclo de vida. O agente age em nome do usuário, mas possui sua própria superfície de ataque.
+:::
+
+## Responsabilidade compartilhada estendida {.cc-slide-imagem background-image="img/cloud-security-ia/slide-06.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Tabela que compara IaaS, PaaS, MaaS (modelo) e aplicação agêntica. Na IaaS e na PaaS, o provedor cuida da infraestrutura e da rede; no MaaS, também dos pesos do modelo; na aplicação agêntica, apenas da infraestrutura. Prompts do sistema, dados de RAG e permissões de ferramentas são sempre responsabilidade sua. Texto: os provedores protegem a infraestrutura e os modelos; você protege os dados, os prompts e o que o agente tem permissão para executar.
+:::
+
+## As causas clássicas {.cc-slide-imagem background-image="img/cloud-security-ia/slide-07.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Três colunas rachadas: configuração incorreta (sandboxes com rotas de saída únicas), IAM permissivo (excesso de agência e privilégios sem escopo) e segredos expostos (chaves vazadas no código-fonte ou em variáveis de ambiente). Texto: um agente com permissões excessivas não é magia negra; é uma ameaça interna incrivelmente rápida. O básico continua falhando.
+:::
+
+## A evolução do risco (dezembro de 2025) {.cc-slide-imagem background-image="img/cloud-security-ia/slide-08.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Comparação entre o OWASP LLM 2025 (foco na saída do modelo, vieses e alucinações, injeções estáticas: risco de saída estática) e o OWASP Agentic 2026 (foco em ações no sistema, planejamento autônomo, abuso de identidade e uso indevido de ferramentas: risco de ação autônoma). Texto: o OWASP Agentic Top 10 marca uma mudança fundamental, do chatbot que diz algo ruim para o agente que exclui seu banco de dados.
+:::
+
+## O ciclo de vida da injeção indireta (IPI) {.cc-slide-imagem background-image="img/cloud-security-ia/slide-09.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Fluxo em quatro etapas: 1. fonte envenenada (PDF ou site aparentemente inofensivo com texto oculto); 2. ingestão pela IA (o pipeline de RAG lê o documento normalmente); 3. instruções ativadas (os dados se misturam e substituem as instruções do sistema); 4. comportamento indesejado (sequestro do objetivo e execução de ações). ASI01, sequestro de objetivo: o invasor nunca toca na caixa de prompt; a IA lê um documento via RAG e as instruções ocultas sequestram o modelo, que não distingue dados de instruções.
+:::
+
+## ASI02 e ASI03: abuso de ferramentas e identidade {.cc-slide-imagem background-image="img/cloud-security-ia/slide-10.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Molho de chaves com três permissões: ler e-mail (intencional), excluir banco de dados (não intencional) e acesso root (não intencional). Texto: agentes frequentemente recebem acesso corporativo sem filtro. Se um agente tem acesso a uma ferramenta, ela passa a fazer parte da sua superfície de ataque pública. O escopo deve ser validado na fronteira.
+:::
+
+## ASI06: envenenamento de memória {.cc-slide-imagem background-image="img/cloud-security-ia/slide-11.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Funil que parte de um contexto envenenado inserido e termina em distorção de longo prazo. Texto: a memória persistente permite que invasores moldem o comportamento futuro de um agente muito depois da injeção inicial; uma única entrada maliciosa redireciona planejamentos de longo prazo.
+:::
+
+## A cadeia de suprimentos de modelos {.cc-slide-imagem background-image="img/cloud-security-ia/slide-12.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Comparação entre Pickle (legado) e SafeTensors (moderno). Pickle serializa comportamentos e objetos, pode executar código arbitrário, como os.system, traz risco inerente de execução remota de código e equivale a rodar um executável desconhecido como administrador. SafeTensors guarda apenas dados numéricos binários planos, não consegue executar código por arquitetura, é seguro por design e carrega até três vezes mais rápido.
+:::
+
+## O conceito de Least Agency (menor agência) {.cc-slide-imagem background-image="img/cloud-security-ia/slide-13.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Escala que vai de workflows fixos à autonomia total, com um cadeado no meio. Texto: a autonomia deve ser conquistada, não configurada por padrão. Pergunta arquitetônica: você realmente precisa de um agente autônomo, ou um workflow fixo com condicionais seria suficiente? O agente mais seguro é aquele que não precisa existir.
+:::
+
+## Demonstração: prompt injection indireta {.cc-slide-imagem background-image="img/cloud-security-ia/slide-14.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Terminal de um ambiente RAG em sandbox: um currículo em PDF é ingerido, uma instrução oculta pede o envio do banco de dados a um servidor de e-mail do atacante, e a tentativa aparece carimbada como bloqueada pela execução em sandbox. Passos: 1. ingestão de documento envenenado via RAG; 2. o agente desvia do objetivo principal; 3. tentativa de acionamento não autorizado, contida.
+:::
+
+## A assimetria da automação {.cc-slide-imagem background-image="img/cloud-security-ia/slide-15.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Balança com o ataque de um lado (atores estatais automatizando ameaças autônomas em escala, com intervenção humana mínima) e a defesa do outro (defesa manual, baseada em alertas e em mobilizações reativas). Texto: não é possível combater uma ofensiva automatizada com defesa manual; a inteligência do modelo deve ser aditiva à defesa estrutural.
+:::
+
+## Slopsquatting e o estagiário muito rápido {.cc-slide-imagem background-image="img/cloud-security-ia/slide-16.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Código Python que importa requests e uma biblioteca inexistente, fake_math_lib, apontada como pacote alucinado pelo LLM e ligada a um registro malicioso no PyPI. Texto: LLMs alucinam nomes de pacotes que não existem, e invasores registram esses nomes no npm e no PyPI. Trate código gerado por IA como o de um estagiário incrivelmente rápido: confie, mas exija verificação severa (SAST) no pipeline.
+:::
+
+## A pilha defensiva (AI-SPM) {.cc-slide-imagem background-image="img/cloud-security-ia/slide-17.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Guarda-chuva do AI-SPM (Artificial Intelligence Security Posture Management) cobrindo repositórios de dados (RAG), pipelines de treinamento e agentes em produção. Texto: a telemetria tradicional não enxerga intenção. Precisamos de inventário completo de ativos de IA e de shadow AI, varredura profunda de segredos no pipeline de treinamento e triagem assistida por IA para lidar com o volume de logs.
+:::
+
+## Atividade em grupos: agente fintech {.cc-slide-imagem background-image="img/cloud-security-ia/slide-18.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Diagrama de um agente de atendimento baseado em LLM ligado a uma base de políticas via RAG, a uma API de saldos e a um servidor de e-mail. Texto: seu agente lê políticas via RAG, consulta saldos via API e envia e-mails aos clientes. Missão, em 15 minutos: usar a metodologia STRIDE e o OWASP Agentic para mapear três ameaças estruturais nesta arquitetura e propor três controles concretos.
+:::
+
+## O canvas de modelagem {.cc-slide-imagem background-image="img/cloud-security-ia/slide-19.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Modelo de tabela com duas colunas: ameaças (STRIDE e OWASP ASI) e controles arquiteturais (mitigações). Exemplo preenchido: envenenamento do RAG levando ao envio de e-mails de phishing (ASI01), mitigado com humano no loop obrigatório para acionar a ferramenta de e-mail. No rodapé, a decisão de menor agência: o agente autônomo é estritamente necessário? Sim ou não.
+:::
+
+## O choque de realidade do CISO {.cc-slide-imagem background-image="img/cloud-security-ia/slide-20.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Carimbo de auditoria aprovada. Texto: em um ambiente regulado, auditores não se importam com a filosofia de alinhamento da sua IA. Eles querem ver: 1. limites arquiteturais rígidos (sandbox isolado); 2. idempotência garantida em chamadas de API; 3. logs criptograficamente assinados de cada chamada de ferramenta.
+:::
+
+## Checklist de segurança agêntica e exit ticket {.cc-slide-imagem background-image="img/cloud-security-ia/slide-21.webp" background-size="contain" background-color="#FFFFFF"}
+
+::: {.cc-descricao}
+Checklist: identidade própria por agente (credenciais efêmeras); menor privilégio e autonomia (humano no loop para ações destrutivas); execução de código totalmente em sandbox (controle restrito de saída de rede); modelos em SafeTensors e telemetria das chamadas de ferramentas. Exit ticket: o que você muda na arquitetura do seu próximo projeto a partir de hoje?
+:::
