@@ -5,7 +5,7 @@ description: "A IA mudou a velocidade e a superfície de ataque, mas a maioria d
 nivel: "Palestra Presencial"
 # Enquanto a disciplina estiver em montagem, mantenha a linha abaixo.
 # Apague-a quando os primeiros materiais forem publicados.
-status: "Em preparação"
+#status: "Em preparação"
 ordem: 1
 listing:
   - id: lista-slides
